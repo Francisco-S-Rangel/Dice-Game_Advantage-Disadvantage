@@ -1,0 +1,30 @@
+<div class="buttons-content">
+
+    <h2 class="buttons-content__title">
+        DICE GAME
+    </h2>
+
+    <div class="dice-type-block">
+        <ng-container *ngFor="let button of buttons, let i = index">
+            <div class="dice-spot">
+                <p class="dice-spot--dice-type">D{{button}}</p>
+                <input type="number" [ngModel]="times[i].amount"
+                    [ngClass]="{'margin-l-25px': button < 10, 'margin-l-13px': button >= 10}" class="margin-l-5px"
+                    (ngModelChange)="_handlerAmountChange($event, i)" min="0" max="10">
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="selector">
+        <select [(ngModel)]="rollType">
+            <option class="blue" value="0">Normal</option>
+            <option class="green" value="1">Advantage</option>
+            <option class="red" value="2">Disadvantage</option>
+        </select>
+    </div>
+
+    <button class="btn-play" (click)="play()" [ngClass]="{'btn-disabled': !buttonPlay}"
+        [disabled]="!buttonPlay">Play</button>
+    <button class="btn-reset" (click)="reset()">Reset</button>
+
+</div>

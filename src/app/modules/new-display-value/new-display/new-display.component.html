@@ -1,0 +1,82 @@
+<div class="display-content">
+
+    <h1 class="display-content__title">
+        Dice Roll Result
+    </h1>
+
+    <ng-container *ngIf="dices$ | async as dices">
+        <div *ngIf=" dices.diceValues.length > 0" class="display-values">
+
+            <!--
+                Old Version New-Display Component - HTML.
+            <div *ngFor="let dice of dices.diceValues; let i = index">
+                <h2 class="dice-text">
+                    
+                    <span class="dice-text--strong-gray">D{{dice.faces}}:</span><span [ngClass]="{
+                         'dice-text--gray': dice.diceResult?.rolledValue?.includes(0),
+                         'dice-text--red': dice.diceResult?.rolledValue?.includes(1),
+                         'dice-text--green': dice.diceResult?.rolledValue?.includes(dice.faces)
+                    }">{{dice.diceResult?.rolledValue}}</span>
+                    <span *ngIf="dice.diceResult?.discardedValue">
+                        -
+                        <span [ngClass]="{
+                        'dice-text--discarded-gray': dice.diceResult?.discardedValue && !dice.diceResult?.discardedValue?.includes(1) 
+                        && !dice.diceResult?.discardedValue?.includes(dice.faces),
+                        'dice-text--discarded-red': dice.diceResult?.discardedValue?.includes(1),
+                        'dice-text--discarded-green': dice.diceResult?.discardedValue?.includes(dice.faces)
+                  }">{{dice.diceResult?.discardedValue}}</span></span>
+                </h2>
+
+            </div>
+        -->
+
+            <div *ngFor="let dice of dices.diceValues; let i = index" class="dice-box">
+
+                <div class="dice-box__top-section">
+                    <h1 class="dice-text--strong-gray">D{{dice.faces}}</h1>
+                </div>
+
+                <div class="dice-box__bottom-section">
+
+                    <div class="dice-box__bottom-section--left-subsection">
+                        <div *ngFor="let rolled of dice.diceResult?.rolledValue" class="dice-text">
+                            <span [ngClass]="{
+                                'dice-text--gray': dice.diceResult?.rolledValue?.includes(0),
+                                'dice-text--red': dice.diceResult?.rolledValue?.includes(1),
+                                'dice-text--green': dice.diceResult?.rolledValue?.includes(dice.faces)
+                           }">{{rolled}}</span>
+                        </div>
+                    </div>
+
+                    <div class="dice-box__bottom-section--middle-subsection" *ngIf="dice.diceResult?.discardedValue">
+                        <div *ngFor="let discarded of dice.diceResult?.discardedValue" class="dice-text">
+                            <span [ngClass]="{
+                            'dice-text--discarded-gray': dice.diceResult?.discardedValue && !dice.diceResult?.discardedValue?.includes(1) 
+                            && !dice.diceResult?.discardedValue?.includes(dice.faces),
+                            'dice-text--discarded-red': dice.diceResult?.discardedValue?.includes(1),
+                            'dice-text--discarded-green': dice.diceResult?.discardedValue?.includes(dice.faces)
+                          }">{{discarded}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div *ngIf="dices.diceValues.length === 0" class="display-values">
+            <h2 class="dice-text">-</h2>
+        </div>
+
+        <div *ngIf="dices.diceValues.length !== 0 && dices.diceValues.length !== 1 ">
+
+            <h2 class="display-content__subtitle">
+                Total
+            </h2>
+
+            <h2 class="value-total">{{ dices.total }}</h2>
+        </div>
+
+    </ng-container>
+
+</div>

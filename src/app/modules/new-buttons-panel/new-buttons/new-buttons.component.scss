@@ -1,0 +1,165 @@
+.buttons-content {
+  background-color: rgb(199, 199, 199);
+  border-right: 2px solid rgb(105, 105, 105);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(52, 88, 218);
+    font-weight: 900;
+  }
+}
+
+.dice-type-block {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+
+}
+
+.dice-spot {
+  display: flex;
+  align-items: center;
+
+  &--dice-type {
+    font-weight: 800;
+    font-size: 1rem;
+    color: rgb(88, 88, 88);
+  }
+}
+
+
+input[type="number"] {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgb(244, 244, 244);
+  font-weight: 800;
+  color: rgb(88, 88, 88);
+  text-align: center;
+  width: max-content;
+  cursor: pointer !important;
+}
+
+input[type="number"]:hover {
+  background-color: rgb(244, 244, 244);
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+input[type="number"] {
+  pointer-events: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+input.margin-l-13px {
+  margin-left: 13px !important;
+}
+
+input.margin-l-25px {
+  margin-left: 25px !important;
+}
+
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0.5rem;
+
+  select {
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background-color: rgb(244, 244, 244);
+    font-weight: 800;
+    color: rgb(85, 85, 85);
+    appearance: none;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(234, 234, 234);
+
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // Estilo das opções
+  option {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 700;
+    line-height: 2;
+    display: flex;
+    justify-content: center;
+
+
+    &.blue {
+      color: rgb(98, 115, 175);
+    }
+
+    &.green {
+      color: rgb(67, 158, 68);
+    }
+
+    &.red {
+      color: rgb(192, 65, 65)
+    }
+  }
+}
+
+button {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-play {
+  background-color: rgb(87, 205, 95);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  color: white;
+
+  &:hover {
+    background-color: rgb(71, 218, 52);
+  }
+}
+
+.btn-reset {
+  background-color: rgb(87, 113, 205);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  color: white;
+  margin-bottom: 0.75rem;
+
+  &:hover {
+    background-color: rgb(52, 88, 218);
+  }
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,25 @@
+<div class="buttons-block">
+
+    <div class="modifier-selector">
+        <select [(ngModel)]="selector">
+            <option class="blue" value="0">Normal</option>
+            <option class="green" value="1">Advantage</option>
+            <option class="red" value="2">Disadvantage</option>
+        </select>
+    </div>
+
+    <button *ngFor="let button of buttons" class="btn-dice" (click)="add(button)">d{{ button }}</button>
+
+    <button class="btn-restart" (click)="restart()">Restart</button>
+
+</div>
+
+<div class="input-block">
+
+    <p class="amount">Amount</p>
+    <input type="number" min="1" max="10" [ngModel]="multiplier" (ngModelChange)="_handlerAmountChange($event)">
+    <p class="rules">* Select between 1 and 10</p>
+
+</div>
+
+<app-loader *ngIf="loader"></app-loader>

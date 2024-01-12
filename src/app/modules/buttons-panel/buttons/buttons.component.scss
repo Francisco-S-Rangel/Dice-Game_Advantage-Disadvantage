@@ -1,0 +1,179 @@
+.buttons-block {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-block {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 0.8rem 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-dice {
+  background-color: rgb(165, 165, 165);
+  font-weight: 700;
+  color: white;
+}
+
+.btn-dice:hover {
+  background-color: gray;
+
+}
+
+.btn-restart {
+  background-color: rgb(87, 113, 205);
+  font-weight: 700;
+  color: white;
+}
+
+.btn-restart:hover {
+  background-color: rgb(52, 88, 218);
+
+}
+
+.btn-disadvantage {
+  background-color: rgb(209, 57, 57);
+  font-weight: 700;
+  color: white;
+}
+
+.btn-disadvantage:hover {
+  background-color: rgb(175, 22, 22);
+}
+
+.btn-advantage {
+  background-color: rgb(40, 162, 42);
+  font-weight: 700;
+  color: white;
+}
+
+.btn-advantage:hover {
+  background-color: rgb(17, 146, 19);
+}
+
+.modifier-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0.5rem;
+
+  select {
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background-color:  rgb(216, 216, 216);
+    font-weight: 800;
+    color: rgb(85, 85, 85);
+    appearance: none;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color:  rgb(209, 209, 209);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+    // Estilo das opções
+  option {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 700;
+    line-height: 2;
+    display: flex;
+    justify-content: center;
+
+    &.blue {
+      color: rgb(98, 115, 175);
+    }
+    &.green {
+      color:rgb(67, 158, 68);
+    }
+    &.red {
+      color:rgb(192, 65, 65)
+    }
+  }
+}
+
+.amount {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(52, 88, 218);
+  font-weight: 800;
+}
+
+.rules {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(79, 79, 79);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.input-block input[type="number"] {
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+  background-color: rgb(244, 244, 244);
+  font-weight: 800;
+  color: rgb(88, 88, 88);
+  text-align: center;
+  width: 3.125rem;
+  cursor: pointer !important;
+}
+
+.input-block input[type="number"]:hover {
+  background-color: rgb(244, 244, 244);
+}
+
+.input-block input[type="number"]:focus {
+  outline: none;
+}
+
+input[type="number"] {
+  pointer-events: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.input-block input[type="number"]::-webkit-inner-spin-button::before,
+.input-block input[type="number"]::-webkit-outer-spin-button::before,
+.input-block input[type="number"]::-webkit-inner-spin-button::after,
+.input-block input[type="number"]::-webkit-outer-spin-button::after {
+  content: '\25B2';
+  /* Setas Unicode para cima */
+  color: #a34444;
+  /* Cor desejada */
+  padding-right: 5px;
+}
+
+.input-block input[type="number"]::-webkit-inner-spin-button::after,
+.input-block input[type="number"]::-webkit-outer-spin-button::after {
+  content: '\25BC';
+  /* Setas Unicode para baixo */
+  color: #555;
+  /* Cor desejada */
+  padding-left: 5px;
+}
